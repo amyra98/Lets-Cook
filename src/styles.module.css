@@ -1,0 +1,16 @@
+.card:hover{
+    transform: scale(1.019);
+    transition: 1ms all linear;
+    cursor: pointer;
+    /* background-color: black; */
+}
+
+.btngreen:hover {
+    color: white;
+    background-color: rgb(11, 140, 11);
+}
+
+.btnred:hover {
+    color: white;
+    background-color: rgb(136, 7, 7);
+}

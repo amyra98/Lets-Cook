@@ -5,6 +5,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
+import styles from "./styles.module.css";
 
 const APP_ID = "a52b4d43";
 const APP_KEY = "e0e5c667605f5e91d8275c973531b80a";
@@ -52,13 +53,13 @@ const RecipeComponent = (props) => {
 
   const { label, image, ingredients, url } = props.recipe;
   return (
-    <RecipeContainer>
+    <RecipeContainer className={styles.card}>
       <Dialog
         onClose={() => console.log("adsadad")}
         aria-labelledby="simple-dialog-title"
         open={!!show}
       >
-        <DialogTitle>Ingredients</DialogTitle>
+        <DialogTitle className={styles.btngreen}>Ingredients</DialogTitle>
         <DialogContent>
           <RecipeName>{label}</RecipeName>
           <table>
@@ -83,10 +84,10 @@ const RecipeComponent = (props) => {
       </Dialog>
       <CoverImage src={image} alt={label} />
       <RecipeName>{label}</RecipeName>
-      <IngredientsText onClick={() => setShow(!show)}>
+      <IngredientsText className={styles.btngreen} onClick={() => setShow(!show)}>
         Ingredients
       </IngredientsText>
-      <SeeMoreText onClick={() => window.open(url)}>
+      <SeeMoreText className={styles.btnred} onClick={() => window.open(url)}>
         See Complete Recipe
       </SeeMoreText>
     </RecipeContainer>
@@ -190,7 +191,7 @@ const AppComponent = () => {
       <RecipeListContainer>
         {recipeList?.length ? (
           recipeList.map((recipe, index) => (
-            <RecipeComponent key={index} recipe={recipe.recipe} />
+            <RecipeComponent  key={index} recipe={recipe.recipe} />
           ))
         ) : (
           <Placeholder src="/react-recipe-finder/hamburger.svg" />
