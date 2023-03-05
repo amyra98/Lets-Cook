@@ -118,3 +118,18 @@ code {
   color: #40b48e;
   font-size: 1.3rem;
 }
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: black;
+  background-clip: content-box;
+  border: 2px solid transparent;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: white;
+}
